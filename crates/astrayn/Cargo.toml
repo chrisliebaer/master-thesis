@@ -1,0 +1,43 @@
+[package]
+publish = false
+name = "astrayn"
+description.workspace = true
+repository.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+readme.workspace = true
+categories.workspace = true
+keywords.workspace = true
+
+
+[dependencies]
+tracing.workspace = true
+tracing-subscriber.workspace = true
+miette.workspace = true
+lazy_static.workspace = true
+semver.workspace = true
+enum-iterator.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+bevy_ecs.workspace = true
+image.workspace = true
+vulkano.workspace = true
+vulkano-win.workspace = true
+winit.workspace = true
+rapier3d.workspace = true
+egui.workspace = true
+egui_plot.workspace = true
+egui_winit_vulkano.workspace = true
+exr.workspace = true
+kahan.workspace = true
+rayon.workspace = true
+rfd.workspace = true
+stacker.workspace = true
+
+shader.workspace = true
+bytemuck.workspace = true
+pcg32.workspace = true
+approx.workspace = true
+glam.workspace = true

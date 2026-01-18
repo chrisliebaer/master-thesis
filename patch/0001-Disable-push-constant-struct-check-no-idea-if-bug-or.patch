@@ -1,0 +1,32 @@
+From 357b71e5a0d19cffaf3f7f6df3f10aca2b2ae450 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Chrislieb=C3=A4r?= <mail@chrisliebaer.de>
+Date: Mon, 28 Oct 2024 01:42:55 +0100
+Subject: [PATCH] Disable push constant struct check (no idea if bug or
+ feature)
+
+---
+ vulkano/src/shader/reflect.rs | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/vulkano/src/shader/reflect.rs b/vulkano/src/shader/reflect.rs
+index 98438fab..f5c16e3d 100644
+--- a/vulkano/src/shader/reflect.rs
++++ b/vulkano/src/shader/reflect.rs
+@@ -861,10 +861,10 @@ fn push_constant_requirements(spirv: &Spirv, stage: ShaderStage) -> Option<PushC
+                 ..
+             } => {
+                 let id_info = spirv.id(ty);
+-                assert!(matches!(
+-                    id_info.instruction(),
+-                    Instruction::TypeStruct { .. }
+-                ));
++								println!("I see type info: {:?} with instruction: {:?}", ty, id_info.instruction());
++								if !matches!(id_info.instruction(), Instruction::TypeStruct { .. }) {
++									return None;
++								}
+                 let start = offset_of_struct(spirv, ty);
+                 let end =
+                     size_of_type(spirv, ty).expect("Found runtime-sized push constants") as u32;
+-- 
+2.46.0.windows.1
+

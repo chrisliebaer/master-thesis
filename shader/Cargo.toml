@@ -1,0 +1,26 @@
+[workspace]
+
+default-members = ["builder"]
+members = ["shader", "builder"]
+resolver = "2"
+
+[workspace.package]
+description = "This workspace is used to compile rust-gpu shaders."
+repository = "https://github.com/chrisliebaer/astrayn"
+version = "0.1.0"
+edition = "2021"
+license = "NOASSERTION"
+readme = "../README.md"
+categories = ["graphics", "rendering"]
+keywords = ["rust-gpu", "spir-v", "shaders"]
+
+
+[workspace.dependencies]
+# needs to be in sync with main application
+spirv-std = { git = "https://github.com/EmbarkStudios/rust-gpu", rev = "3689d11" }
+spirv-builder = { git = "https://github.com/EmbarkStudios/rust-gpu", rev = "3689d11" }
+bytemuck = { version = "1.14.1", features = ["derive", "min_const_generics"] }
+glam = { version = "0.24", default-features = false, features = ["libm", "bytemuck"] }
+pcg32 = "0.1"
+approx = "0.5"
+static_assertions = "1.1"

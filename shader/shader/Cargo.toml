@@ -1,0 +1,23 @@
+[package]
+publish = false
+name = "shader"
+description.workspace = true
+repository.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+readme.workspace = true
+categories.workspace = true
+keywords.workspace = true
+
+
+[lib]
+crate-type = ["dylib", "lib"]
+
+[dependencies]
+spirv-std.workspace = true
+glam.workspace = true
+bytemuck.workspace = true
+pcg32.workspace = true
+approx.workspace = true
+static_assertions.workspace = true

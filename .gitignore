@@ -1,0 +1,8 @@
+/target
+vk_layer_settings.txt
+
+# file formats that might accidentally end up in project
+*.exr
+
+# plot files
+/plots
